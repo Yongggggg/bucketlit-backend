@@ -1,0 +1,6 @@
+.vscode
+*.DS_Store
+*__pycache__
+*.env
+bucketlit_web/static/.webassets-cache
+bucketlit_web/static/gen

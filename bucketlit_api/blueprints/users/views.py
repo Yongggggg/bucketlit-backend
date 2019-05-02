@@ -33,6 +33,7 @@ def create():
                     'email': user.email,
                 }
             })
+        
     elif user.errors:
         errors = user.errors
         return jsonify({    

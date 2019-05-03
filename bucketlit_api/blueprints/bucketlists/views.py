@@ -27,10 +27,10 @@ def create():
             req_data = request.get_json()
             title = req_data['title']
             category = req_data['category']
-            completed_by = req_data['completed_by']
+            start_by = req_data['start_by']
             description = req_data['description']
 
-            item = Bucketlist(title=title, category=category, completed_by=completed_by, description=description, user=user)
+            item = Bucketlist(title=title, category=category, start_by=start_by, description=description, user=user)
 
             if item.save():
                 return jsonify([{
@@ -40,7 +40,7 @@ def create():
                         'id': item.id,
                         'title': item.title,
                         'category': item.category,
-                        'completed_by': item.completed_by,
+                        'start_by': item.start_by,
                         'description': item.description,
                     }
                 }])
@@ -58,10 +58,7 @@ def create():
                       'title': item.title,
                       'category': item.category,
                       'description': item.description,
-                      'latitude': item.latitude,
-                      'longitude': item.longitude,
-                      'address': item.address,
-                      'completed_by': item.completed_by,
+                      'start_by': item.start_by,
                       'complete': item.complete} for item in items]})
 
             

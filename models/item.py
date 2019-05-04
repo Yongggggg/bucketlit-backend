@@ -2,8 +2,8 @@ from models.base_model import BaseModel
 import peewee as pw
 from models.user import User
 
-class Bucketlist(BaseModel):
-    user = pw.ForeignKeyField(User, backref="bucketlist")
+class Item(BaseModel):
+    user = pw.ForeignKeyField(User, backref="item")
     title = pw.CharField(unique=True)
     description = pw.CharField(max_length=1000, null=True)
     category = pw.CharField()

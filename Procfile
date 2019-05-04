@@ -1,1 +1,1 @@
-web: python __init__.py
+ web: python migrate.py; gunicorn start:app --preload
